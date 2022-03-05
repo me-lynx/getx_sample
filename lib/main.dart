@@ -3,20 +3,12 @@ import 'package:get/get.dart';
 
 import 'controller/controller.dart';
 
-void main() => runApp(GetMaterialApp(home: MyApp()));
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
+void main() => runApp(GetMaterialApp(
+      home: MyHomePage(
+        title: 'Flutter Project - Using Getx',
       ),
-      home: MyHomePage(title: 'Flutter sample - Using Getx'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+    ));
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -33,6 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Obx(
       () => Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Text(widget.title),
         ),
         body: Center(
@@ -53,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: controller.increment,
           tooltip: 'Increment',
           child: Icon(Icons.add),
+          backgroundColor: Colors.black,
         ),
       ),
     );
